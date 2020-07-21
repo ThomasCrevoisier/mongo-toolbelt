@@ -13,8 +13,23 @@ extra-source-files:
 
 dependencies:
   - base >= 4.7 && < 5
+  - bson
+  - containers
+  - mongoDB
+  - safe
+  - streaming
+  - text
+  - time
+  - transformers
+
+library:
+  source-dirs:        src
 
 executables:
   mongo-toolbelt:
-    source-dirs:      src
+    source-dirs:      bin/MongoToolbeltCLI
     main:             Main.hs
+
+    dependencies:
+    - mongo-toolbelt
+    - optparse-applicative
